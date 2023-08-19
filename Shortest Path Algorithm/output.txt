@@ -1,7 +1,2 @@
-Dist of Node 1 : 0
-Dist of Node 2 : 3
-Dist of Node 3 : 5
-Dist of Node 4 : 6
-Dist of Node 5 : 7
-Dist of Node 6 : 7
-Dist of Node 7 : 9
+Level : 2
+5 3 1 
