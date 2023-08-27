@@ -1,2 +1,7 @@
-Level : 2
-5 3 1 
+Dist 1 : 0
+Dist 2 : 3
+Dist 3 : 5
+Dist 4 : 6
+Dist 5 : 8
+Dist 6 : 7
+Dist 7 : 10

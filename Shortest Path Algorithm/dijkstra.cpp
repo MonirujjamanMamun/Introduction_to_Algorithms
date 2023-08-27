@@ -61,34 +61,33 @@
 using namespace std;
 
 typedef pair<int, int> pii;
-const int N = 1e5 + 5;
+const int N = 1e3 + 5;
 const int INF = 1e9 + 10;
 
 vector<pii> adj[N];
 vector<bool> visited(N);
 vector<int> dist(N, INF);
-
-void dijkstra(int source)
+void dijstra(int sourse)
 {
     priority_queue<pii, vector<pii>, greater<pii>> pq;
-    dist[source] = 0;
-    pq.push({dist[source], source});
+    dist[sourse] = 0;
+    pq.push({dist[sourse], sourse});
 
     while (!pq.empty())
     {
-        int p = pq.top().second;
+        int parents = pq.top().second;
         pq.pop();
-        visited[p] = true;
-        for (pii vpar : adj[p])
+        visited[parents];
+        for (pii vpair : adj[parents])
         {
-            int u = vpar.first;
-            int v = vpar.second;
-            if (visited[u])
+            int node = vpair.first;
+            int weight = vpair.second;
+            if (visited[node])
                 continue;
-            if (dist[u] > dist[p] + v)
+            if (dist[node] > dist[parents] + weight)
             {
-                dist[u] = dist[p] + v;
-                pq.push({dist[u], u});
+                dist[node] = dist[parents] + weight;
+                pq.push({dist[node], node});
             }
         }
     }
@@ -96,6 +95,7 @@ void dijkstra(int source)
 
 int main()
 {
+
     int n, m;
     cin >> n >> m;
     for (int i = 0; i < m; i++)
@@ -106,10 +106,11 @@ int main()
         adj[v].push_back({u, w});
     }
 
-    dijkstra(1);
+    dijstra(1);
+
     for (int i = 1; i <= n; i++)
     {
-        cout << "Dist of Node " << i << " : " << dist[i] << endl;
+        cout << "Dist " << i << " : " << dist[i] << endl;
     }
     return 0;
 }
